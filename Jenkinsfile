@@ -14,6 +14,18 @@ pipeline {
                 }
             }
         }
+
+        stage('Создаем пустую файловую базу данных') {
+            steps {
+                timestamps {
+                    script {
+                        edtBase = "C:\\Users\\Sergey\\Documents\\Repos\\edt-base"
+                    }
+                    cmd("${env:PathOf1C} CREATEINFOBASE File=${edtBase}")
+                }
+            }
+        }
+
     }
 }
 
