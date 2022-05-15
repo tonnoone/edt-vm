@@ -36,6 +36,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Выгрузка конфигурации в файл') {
+            steps {
+                timestamps {
+                    cmd("${env:PathOf1C} DESIGNER /F ${env:EDTBase} /DumpCfg ${env:EDTCF}")
+                }
+            }
+        }
     }
 }
 
