@@ -26,6 +26,16 @@ pipeline {
             }
         }
 
+        stage('Загружаем xml файлы в конфигурацию') {
+            steps {
+                timestamps {
+                    script {
+                        extraPath = "/LoadConfigFromFiles ${env:EDTExport} /UpdateDBCfg"
+                    }
+                    cmd("${env:PathOf1C} DESIGNER /F ${env:EDTBase} ${extraPath}")
+                }
+            }
+        }
     }
 }
 
