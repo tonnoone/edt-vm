@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Экспорт конфигурации из EDT в XML') {
             steps {
-                timestampes{
+                timestamps{
                     script {
                         edtExport   = "C:\\Users\\Sergey\\Documents\\Repos\\edt-export"
                         edtProject  = "C:\\Users\\Sergey\\git\\edt-vm\\edt_test"
