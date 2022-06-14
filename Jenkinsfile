@@ -9,7 +9,7 @@ pipeline {
                 }
                 timestamps {
                     cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
-                    cmd("mkdir C:\\Users\\Sergey\\Documents\\tRepos\\edt_smoke")
+                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_smoke")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_cf")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-export")
