@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('Подготовка каталогов') {
             steps {
+                script {
+                    reposPath = "C:\\Users\\Sergey\\Documents\\Repos"
+                }
                 timestamps {
-                    cmd("IF EXIST ""C:\\Users\\Sergey\\Documents\\Repos"" (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
+                    cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\tRepos\\edt_smoke")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
                     cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_cf")
