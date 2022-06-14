@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     stages {
-        // stage('Подготовка каталогов') {
-        //     steps {
-        //         script {
-        //             reposPath = "C:\\Users\\Sergey\\Documents\\Repos"
-        //         }
-        //         timestamps {
-        //             cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
-        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_smoke")
-        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
-        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_cf")
-        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-export")
-        //         }
-        //     }    
-        // }
+        stage('Подготовка каталогов') {
+            steps {
+                script {
+                    reposPath = "C:\\Users\\Sergey\\Documents\\Repos"
+                }
+                timestamps {
+                    cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
+                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_smoke")
+                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
+                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-cf")
+                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-export")
+                }
+            }    
+        }
 
         stage('Экспорт конфигурации из EDT в XML') {
             steps {
