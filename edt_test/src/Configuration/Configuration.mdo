@@ -46,6 +46,8 @@
   </languages>
   <subsystems>Subsystem.СправочнаяИнформация</subsystems>
   <roles>Role.ПолныеПрава</roles>
+  <catalogs>Catalog.Организации</catalogs>
   <catalogs>Catalog.Товары</catalogs>
   <enums>Enum.СтавкиНДС</enums>
+  <enums>Enum.ЮридическоеФизическоеЛицо</enums>
 </mdclass:Configuration>
