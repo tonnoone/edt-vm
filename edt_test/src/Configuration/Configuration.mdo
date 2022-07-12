@@ -48,6 +48,7 @@
   <roles>Role.ПолныеПрава</roles>
   <catalogs>Catalog.Организации</catalogs>
   <catalogs>Catalog.Товары</catalogs>
+  <enums>Enum.ВидыТоваров</enums>
   <enums>Enum.СтавкиНДС</enums>
   <enums>Enum.ЮридическоеФизическоеЛицо</enums>
 </mdclass:Configuration>

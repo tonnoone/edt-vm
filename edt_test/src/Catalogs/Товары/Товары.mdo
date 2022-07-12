@@ -99,4 +99,21 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="ba80e65b-a7f7-4f37-bf0d-25c1c9a82a8a">
+    <name>ВидТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид товара</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыТоваров.EnumValue.Товар</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
 </mdclass:Catalog>
