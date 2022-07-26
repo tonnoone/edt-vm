@@ -9,11 +9,11 @@ pipeline {
                 }
                 timestamps {
                     cmd("echo %${reposPath}%")
-                    cmd("IF EXIST ${reposPath} (rmdir /Q /S ""${reposPath}\\Repos"")")
-                    cmd("mkdir ""${reposPath}\\Repos\\edt_smoke""")
-                    cmd("mkdir ""${reposPath}\\Repos\\edt-base""")
-                    cmd("mkdir ""${reposPath}\\Repos\\edt-cf""")
-                    cmd("mkdir ""${reposPath}\\Repos\\edt-export""")
+                    cmd("IF EXIST ${reposPath} (rmdir /Q /S ${reposPath}\\Repos)")
+                    cmd("mkdir ${reposPath}\\Repos\\edt_smoke")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-base")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-cf")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-export")
                 }
             }    
         }
