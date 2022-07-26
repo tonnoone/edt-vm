@@ -5,7 +5,7 @@ pipeline {
         stage('Подготовка каталогов') {
             steps {
                 script {
-                    reposPath = "${env.WORKSPACE}"
+                    reposPath = "${env.WORKSPACE}\\Repos"
                 }
                 timestamps {
                     cmd("echo %${reposPath}%")
