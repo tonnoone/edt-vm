@@ -5,17 +5,33 @@ pipeline {
         stage('Подготовка каталогов') {
             steps {
                 script {
-                    reposPath = "C:\\Users\\Sergey\\Documents\\Repos"
+                    reposPath = "${env.WORKSPACE}"
                 }
                 timestamps {
-                    cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
-                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_smoke")
-                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
-                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-cf")
-                    cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-export")
+                    cmd("echo %${reposPath}%")
+                    cmd("IF EXIST ${reposPath} (rmdir /Q /S ${reposPath}\\Repos)")
+                    cmd("mkdir ${reposPath}\\Repos\\edt_smoke")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-base")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-cf")
+                    cmd("mkdir ${reposPath}\\Repos\\edt-export")
                 }
             }    
         }
+
+        // stage('Подготовка каталогов') {
+        //     steps {
+        //         script {
+        //             reposPath = "C:\\Users\\Sergey\\Documents\\Repos"
+        //         }
+        //         timestamps {
+        //             cmd("IF EXIST ${reposPath} (rmdir /Q /S C:\\Users\\Sergey\\Documents\\Repos)")
+        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt_smoke")
+        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-base")
+        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-cf")
+        //             cmd("mkdir C:\\Users\\Sergey\\Documents\\Repos\\edt-export")
+        //         }
+        //     }    
+        // }
 
         stage('Экспорт конфигурации из EDT в XML') {
             steps {
