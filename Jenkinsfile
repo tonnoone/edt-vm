@@ -37,9 +37,12 @@ pipeline {
             steps {
                 timestamps{
                     script {
-                        edtExport   = "C:\\Users\\Sergey\\Documents\\Repos\\edt-export"
-                        edtProject  = "C:\\Users\\Sergey\\git\\edt-vm\\edt_test"
-                        workspace   = "C:\\Users\\Sergey\\git\\edt-vm"
+                        edtExport   = "${env.WORKSPACE}\\Repos\\edt-export"
+                        edtProject  = "${env.WORKSPACE}\\edt_test"
+                        workspace   = "${env.WORKSPACE}"
+                        // edtExport   = "C:\\Users\\Sergey\\Documents\\Repos\\edt-export"
+                        // edtProject  = "C:\\Users\\Sergey\\git\\edt-vm\\edt_test"
+                        // workspace   = "C:\\Users\\Sergey\\git\\edt-vm"
                     }
                     cmd("ring edt workspace export --workspace-location ${workspace} --project ${edtProject} --configuration-files ${edtExport}")
                 }
@@ -50,7 +53,8 @@ pipeline {
             steps {
                 timestamps {
                     script {
-                        edtBase = "C:\\Users\\Sergey\\Documents\\Repos\\edt-base"
+                        edtBase = "${env.WORKSPACE}\\Repos\\edt-base"
+                        // edtBase = "C:\\Users\\Sergey\\Documents\\Repos\\edt-base"
                     }
                     cmd("${env:PathOf1C} CREATEINFOBASE File=${edtBase}")
                 }
