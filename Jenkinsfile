@@ -66,7 +66,7 @@ pipeline {
                 timestamps {
                     script {
                         // extraPath = "/LoadConfigFromFiles ${env:EDTExport} /UpdateDBCfg"
-                        extraPath = "/LoadConfigFiles ${env.WORKSPACE}\\Repos\\edt-export /UpdateDBCfg"
+                        extraPath = "/LoadConfigFromFiles ${env.WORKSPACE}\\Repos\\edt-export /UpdateDBCfg"
                         edtBase = "${env.WORKSPACE}\\Repos\\edt-base"
                     }
                     cmd("${env:PathOf1C} DESIGNER /F ${edtBase} ${extraPath}")
