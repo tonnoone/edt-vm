@@ -65,9 +65,11 @@ pipeline {
             steps {
                 timestamps {
                     script {
-                        extraPath = "/LoadConfigFromFiles ${env:EDTExport} /UpdateDBCfg"
+                        // extraPath = "/LoadConfigFromFiles ${env:EDTExport} /UpdateDBCfg"
+                        extraPath = "/LoadConfigFiles ${env.WORKSPASE}\\Repos\\edt-export /UpdateDBCfg"
+                        edtBase = "${env.WORKSPASE}\\Repos\\edt-base"
                     }
-                    cmd("${env:PathOf1C} DESIGNER /F ${env:EDTBase} ${extraPath}")
+                    cmd("${env:PathOf1C} DESIGNER /F ${edtBase} ${extraPath}")
                 }
             }
         }
@@ -75,7 +77,11 @@ pipeline {
         stage('Выгрузка конфигурации в файл') {
             steps {
                 timestamps {
-                    cmd("${env:PathOf1C} DESIGNER /F ${env:EDTBase} /DumpCfg ${env:EDTCF}")
+                    script {
+                        edtBase = "${env.WORKSPASE}\\Repos\\edt-base"
+                        edtCf = "${env.WORKSPACE}\\Repos\\edt-cf\\1cv8.cf"
+                    }
+                    cmd("${env:PathOf1C} DESIGNER /F ${edtBase} /DumpCfg ${edtCf}")
                 }
             }
         }
