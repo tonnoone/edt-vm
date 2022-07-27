@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
+    "ВыполнитьСценарии": true,
+    "ЗакрытьTestClientПослеЗапускаСценариев": true,
+    "КаталогФич": "$workspaceRoot/features",
+    "ДелатьОтчетВФорматеАллюр": true,
+    "КаталогOutputAllureБазовый": "$workspaceRoot/out/allure",
+    "ВыгружатьСтатусВыполненияСценариевВФайл": true,
+    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/out/buildStatus.log",
+    "ЗавершитьРаботуСистемы": true,
+    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина"
+}
