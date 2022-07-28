@@ -5,6 +5,7 @@
     <key>ru</key>
     <value>Edt test</value>
   </synonym>
+  <comment>Тестовая база</comment>
   <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="f9da7b8a-e54a-41d4-b637-56cc0486dd06"/>
   <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="457b24b7-88af-4b49-b899-e5c7ae2bd7e3"/>
   <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="e2409673-728b-409a-870d-d71274e0cfcd"/>
@@ -35,7 +36,7 @@
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
   <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
-  <compatibilityMode>8.3.20</compatibilityMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
   <languages uuid="5146b7fb-875e-4183-8e1d-32d37d23ae97">
     <name>Русский</name>
     <synonym>
