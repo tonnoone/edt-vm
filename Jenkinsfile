@@ -1,3 +1,5 @@
+def connectionString
+
 pipeline {
     agent any
 
@@ -84,6 +86,23 @@ pipeline {
                     cmd("${env:PathOf1C} DESIGNER /F ${edtBase} /DumpCfg ${edtCf}")
                 }
             }
+        }
+
+        stage('Проверка поведения') {
+            steps {
+                timestamps {
+                    script {
+                        connectionString = "/F ${edtBase}"
+
+                    }
+                    cmd("vrunner vanessa --vanessasettings ./tools/VBParams.json --workspace . --ibconnection ${connectionString}")
+                }
+            }
+        }
+    }
+    post {
+        always {
+            allure includeProperties: false, jdk: '', results: [[path: 'out/allure']]
         }
     }
 }
