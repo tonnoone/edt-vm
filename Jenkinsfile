@@ -93,7 +93,6 @@ pipeline {
                 timestamps {
                     script {
                         connectionString = "/F${edtBase}"
-
                     }
                     cmd("vrunner vanessa --vanessasettings ./tools/VBParams.json --workspace . --ibconnection ${connectionString}")
                 }
